@@ -1,7 +1,13 @@
 $(document).ready(onReady);
 
 function onReady() {
-    console.log('JQ Ready');
-} // end F= onReady
+     $(document).on('click', $('submitButton'), submitButton);
 
-console.log('JS Ready');
+} // end onReady
+
+
+
+// registers the Submit Button being pressed 
+function submitButton () {
+    console.log('Submit Button');
+} // end submitButton
