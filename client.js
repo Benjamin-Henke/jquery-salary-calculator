@@ -73,4 +73,18 @@ function calcMonthlyCosts() {
 // put into submitButton function
 function displayEmployees() {
     console.log('displayEmployees');
+    let displayEmployees = $('.displayEmployees');
+    displayEmployees.empty();
+
+    for (let employee of employees) {
+        displayEmployees.append(
+            `<li>` 
+                +employee.firstName+ ` `
+                +employee.lastName+ ` `
+                +employee.idNumber+ ` `
+                +employee.jobTitle+ ` `
+                +employee.annualSalary+
+            `</li>`
+        ); // end displayEmployees.append 
+    } // end of loop
 } // end displayEmployees
