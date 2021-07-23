@@ -1,9 +1,9 @@
-[] Input form that collect the following from employees:
-    [] _first name_
-    [] _last name_
-    [] _ID number_
-    [] _job title_
-    [] _annual salary_
+[]x Input form that collect the following from employees:
+    [x] _first name_
+    [x] _last name_
+    [x] _ID number_
+    [x] _job title_
+    [x] _annual salary_
 
 [] Create a submit button that:
     [] collects the form information
