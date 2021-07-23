@@ -19,12 +19,15 @@ function submitButton() {
 // push user input to a table or list?
 function employeeInput() {
     // take in employee information
-    $('#firstNameInput').val();
-    $('#lastNameInput').val();
-    $('#idNumberInput').val();
-    $('#jobTitleInput').val();
-    $('#annualSalaryInput').val();
+    const newEmployeeObj = {
+        firstName: $('#firstNameInput').val(),
+        lastName: $('#lastNameInput').val(),
+        idNumber: $('#idNumberInput').val(),
+        jobTitle: $('#jobTitleInput').val(),
+        annualSalary: $('#annualSalaryInput').val()
+    };
     // push to employee array
+    employee.push(newEmployeeObj);
 
     // clear user input
     clearUserInput();
