@@ -2,10 +2,9 @@ $(document).ready(onReady);
 
 function onReady() {
     $(document).on('click', '#submitButton', submitButton);
-
 } // end onReady
 
-let employee = [];
+let employees = [];
 
 // registers the Submit Button being pressed 
 function submitButton() {
@@ -13,10 +12,12 @@ function submitButton() {
 
     // run employeeInput
     employeeInput();
+
+    // run calcMonthlyCosts
+    calcMonthlyCosts ();
 } // end submitButton
 
-// Need a function to take in employee data
-// push user input to a table or list?
+// take in employee information and stores them in employees array
 function employeeInput() {
     // take in employee information
     const newEmployeeObj = {
@@ -27,13 +28,14 @@ function employeeInput() {
         annualSalary: $('#annualSalaryInput').val()
     };
     // push to employee array
-    employee.push(newEmployeeObj);
+    employees.push(newEmployeeObj);
 
     // clear user input
     clearUserInput();
 
 } // end employeeInput
 
+// clears user input from input form
 function clearUserInput (){
     // empty inputs
     $('#firstNameInput').val('');
@@ -42,3 +44,19 @@ function clearUserInput (){
     $('#jobTitleInput').val('');
     $('#annualSalaryInput').val('');
   } // end clearUserInput
+
+// calculate monthly costs
+// append to DOM
+function calcMonthlyCosts() {
+    console.log('calcMonthlyCosts');
+    
+    let totalMonthlyCosts = 0;
+    for (let employee of employees) {
+        totalMonthlyCosts += Number(employee.annualSalary);
+    } // end for of loop
+
+    console.log('Monthly Costs', totalMonthlyCosts);
+    $('.inputMonthlyCost').empty();
+    $('.inputMonthlyCost').append(totalMonthlyCosts);
+    
+  } // end calcMonthlyCosts

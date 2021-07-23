@@ -6,9 +6,9 @@
     [x] _annual salary_
 
 [] Create a submit button that:
-    [] collects the form information
-    [] stores info to calculate monthly costs
-        [] append to the DOM
+    [x] collects the form information
+    [x] stores info to calculate monthly costs
+        [x] append to the DOM
     [] append info to the DOM and clear input fields
     [] If total monthly costs exceeds 20000, add red background color to monthly costs
 
