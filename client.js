@@ -14,10 +14,15 @@ function submitButton() {
     employeeInput();
 
     // run calcMonthlyCosts
-    calcMonthlyCosts ();
+    calcMonthlyCosts();
+
+    // run displayEmployees
+    displayEmployees();
 } // end submitButton
 
+
 // take in employee information and stores them in employees array
+// put into submitButton function
 function employeeInput() {
     // take in employee information
     const newEmployeeObj = {
@@ -36,27 +41,36 @@ function employeeInput() {
 } // end employeeInput
 
 // clears user input from input form
-function clearUserInput (){
+// put into employeeInput function
+function clearUserInput() {
     // empty inputs
     $('#firstNameInput').val('');
     $('#lastNameInput').val('');
     $('#idNumberInput').val('');
     $('#jobTitleInput').val('');
     $('#annualSalaryInput').val('');
-  } // end clearUserInput
+} // end clearUserInput
 
 // calculate monthly costs
 // append to DOM
+// put into submitButton function
 function calcMonthlyCosts() {
     console.log('calcMonthlyCosts');
-    
+
     let totalMonthlyCosts = 0;
+    // calc monthly cost by diving annual salary by 12, rounding to the nearest whole number
     for (let employee of employees) {
-        totalMonthlyCosts += Number(employee.annualSalary);
+        totalMonthlyCosts += Math.round(Number(employee.annualSalary) / 12);
     } // end for of loop
 
     console.log('Monthly Costs', totalMonthlyCosts);
     $('.inputMonthlyCost').empty();
     $('.inputMonthlyCost').append(totalMonthlyCosts);
-    
-  } // end calcMonthlyCosts
+
+} // end calcMonthlyCosts
+
+// displays employee information on DOM
+// put into submitButton function
+function displayEmployees() {
+    console.log('displayEmployees');
+} // end displayEmployees
