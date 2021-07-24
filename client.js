@@ -4,6 +4,7 @@ function onReady() {
     $(document).on('click', '#submitButton', submitButton);
 } // end onReady
 
+// global variable to remember employees
 let employees = [];
 
 // registers the Submit Button being pressed 
@@ -22,7 +23,7 @@ function submitButton() {
 
 
 // take in employee information and stores them in employees array
-// put into submitButton function
+// placed in submitButton function
 function employeeInput() {
     // take in employee information
     const newEmployeeObj = {
@@ -41,7 +42,7 @@ function employeeInput() {
 } // end employeeInput
 
 // clears user input from input form
-// put into employeeInput function
+// placed in employeeInput function
 function clearUserInput() {
     // empty inputs
     $('#firstNameInput').val('');
@@ -49,11 +50,14 @@ function clearUserInput() {
     $('#idNumberInput').val('');
     $('#jobTitleInput').val('');
     $('#annualSalaryInput').val('');
+
+    // put cursor back to first name input field
+    $('#firstNameInput').focus();
 } // end clearUserInput
 
-// calculate monthly costs
-// append to DOM
-// put into submitButton function
+// calculate monthly costs and append to DOM
+// placed in submitButton function
+// TO FIX -> background turns read when monthly cost on first click -> Maybe separate function?
 function calcMonthlyCosts() {
     console.log('calcMonthlyCosts');
 
@@ -64,27 +68,29 @@ function calcMonthlyCosts() {
     } // end for of loop
 
     console.log('Monthly Costs', totalMonthlyCosts);
-    $('.inputMonthlyCost').empty();
-    $('.inputMonthlyCost').append(totalMonthlyCosts);
+    // $('.inputMonthlyCost').empty();
+    // $('.inputMonthlyCost').append(totalMonthlyCosts);
+    $('.inputMonthlyCost').text(totalMonthlyCosts);
+
+    // check to see if monthly cost exceeds 20k
+    if (totalMonthlyCosts > 20000) {
+        $('.inputMonthlyCost').append('<div class="monthlyCostExceeds"></div>')
+    } // end if statement
 
 } // end calcMonthlyCosts
 
 // displays employee information on DOM
-// put into submitButton function
+// placed in submitButton function
+// TO FIX -> Right now it's just in a list and looks bad
 function displayEmployees() {
     console.log('displayEmployees');
     let displayEmployees = $('.displayEmployees');
+    let employeeTable = $('.employeeTable')
+
+    employeeTable.empty();
     displayEmployees.empty();
 
     for (let employee of employees) {
-        displayEmployees.append(
-            `<li>` 
-                +employee.firstName+ ` `
-                +employee.lastName+ ` `
-                +employee.idNumber+ ` `
-                +employee.jobTitle+ ` `
-                +employee.annualSalary+
-            `</li>`
-        ); // end displayEmployees.append 
+        displayEmployees.append(); // end displayEmployees.append 
     } // end of loop
 } // end displayEmployees

@@ -13,7 +13,7 @@
     <h1>Salary Calculator</h1>
 
     <!--Input fields for employee data-->
-    <h2 id="employeeSalary">Employee Information</h2>
+    <h2 id="employeeInput">Employee Input</h2>
       <input type="text" placeholder="First Name" id="firstNameInput" class="inputForm"/>
       <input type="text" placeholder="Last Name" id="lastNameInput" class="inputForm"/>
       <input type="text" placeholder="ID Number" id="idNumberInput" class="inputForm"/>
@@ -22,9 +22,38 @@
       <button id="submitButton" class="inputForm">Submit</button>
 
       <!--Where input form will be displayed-->
-      <ul class="displayEmployees"></ul>
+      <ul></ul>
 
-      <h2 id="monthlyCostCalc">Monthly Cost: <span class="inputMonthlyCost"></span></h2>
+    <!--Input fields for employee data-->
+    <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID Number</th>
+                    <th>Job Title</th>
+                    <th>Annual Salary</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody  class="employeeTable">
+                <tr>
+                    <td>Mary</td>
+                    <td>Sharp</td>
+                    <td>4563</td>
+                    <td>CEO</td>
+                    <td>$75000</td>
+                    <td><span>Del Button</span></th>
+                </tr>
+            </tbody>
+    </table>
+
+
+
+      <!--Change background color to red-->
+      <div class="monthlyCostExceeds"></div>
+
+      <h2 id="monthlyCostCalc">Monthly Cost: $<span class="inputMonthlyCost"></span></h2>
     
 </body>
 </html>
