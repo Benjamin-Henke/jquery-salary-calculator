@@ -13,5 +13,6 @@
     [x] If total monthly costs exceeds 20000, add red background color to monthly costs
 
 [x] Create a delete button
-    [] delete employee from DOM -> $(this) will be needed
-    []
+    [x] delete employee from DOM -> $(this) will be needed
+    [] (STRETCH) delete employees monthly cost from DOM - got stuck on
+    [] delete employee from employees array - got stuck on

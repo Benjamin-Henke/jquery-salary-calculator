@@ -24,7 +24,6 @@ function submitButton() {
     displayEmployees();
 } // end submitButton
 
-
 // take in employee information and stores them in employees array
 // placed in submitButton function
 function employeeInput() {
@@ -77,7 +76,6 @@ function calcMonthlyCosts() {
     $('.inputMonthlyCost').text(totalMonthlyCosts);
 } // end calcMonthlyCosts
 
-
 // displays employee information on DOM
 // placed in submitButton function
 function displayEmployees() {
@@ -106,5 +104,6 @@ function displayEmployees() {
 function deleteEmployee() {
     console.log('deleteButton');
     $(this).parent().remove();
-
 } // end deleteEmployee
+
+
