@@ -100,6 +100,7 @@ function displayEmployees() {
 
 // When Delete Button is pressed, delete the employee.
 // Delete button removes employee.
+// placed in onReady
 // STRETCH - subtract from Total Monthly Cost
 function deleteEmployee() {
     console.log('deleteButton');
