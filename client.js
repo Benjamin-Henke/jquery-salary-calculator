@@ -2,7 +2,7 @@ $(document).ready(onReady);
 
 function onReady() {
     $(document).on('click', '#submitButton', submitButton);
-    $(document).on('click', '.deleteEmployeeButton', deleteEmployee)
+    $(document).on('click', '#deleteEmployeeButton', deleteEmployee)
 } // end onReady
 
 // global variable to remember employees
@@ -87,12 +87,12 @@ function displayEmployees() {
     for (let employee of employees) {
         employeeTable.append(`
             <tr>
-                <td> ${employee.firstName} </td>
-                <td> ${employee.lastName} </td>
-                <td> ${employee.idNumber} </td>
-                <td> ${employee.jobTitle} </td>
-                <td class="employeeAnnualSalary"> ${employee.annualSalary} </td>
-                <td class="deleteEmployeeButton"><button>Delete</button></td>
+                <td class="employeeInfo"> ${employee.firstName} </td>
+                <td class="employeeInfo"> ${employee.lastName} </td>
+                <td class="employeeInfo"> ${employee.idNumber} </td>
+                <td class="employeeInfo"> ${employee.jobTitle} </td>
+                <td class="employeeInfo"> ${employee.annualSalary} </td>
+                <td id="deleteEmployeeButton"><button>Delete</button></td>
             </tr>
         `); // end displayEmployees.append 
     } // end of loop
