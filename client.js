@@ -65,32 +65,35 @@ function calcMonthlyCosts() {
     // calc monthly cost by diving annual salary by 12, rounding to the nearest whole number
     for (let employee of employees) {
         totalMonthlyCosts += Math.round(Number(employee.annualSalary) / 12);
+           // check to see if monthly cost exceeds 20k
+        if (totalMonthlyCosts >= 20000) {
+            $('.inputMonthlyCost').css('background-color', 'red');
+        } // end if statement
     } // end for of loop
 
     console.log('Monthly Costs', totalMonthlyCosts);
-    // $('.inputMonthlyCost').empty();
-    // $('.inputMonthlyCost').append(totalMonthlyCosts);
     $('.inputMonthlyCost').text(totalMonthlyCosts);
-
-    // check to see if monthly cost exceeds 20k
-    if (totalMonthlyCosts > 20000) {
-        $('.inputMonthlyCost').append('<div class="monthlyCostExceeds"></div>')
-    } // end if statement
-
 } // end calcMonthlyCosts
+
 
 // displays employee information on DOM
 // placed in submitButton function
-// TO FIX -> Right now it's just in a list and looks bad
 function displayEmployees() {
-    console.log('displayEmployees');
-    let displayEmployees = $('.displayEmployees');
+    console.log('employeeTable');
     let employeeTable = $('.employeeTable')
 
     employeeTable.empty();
-    displayEmployees.empty();
 
     for (let employee of employees) {
-        displayEmployees.append(); // end displayEmployees.append 
+        employeeTable.append(`
+            <tr>
+                <td> ${employee.firstName} </td>
+                <td> ${employee.lastName} </td>
+                <td> ${employee.idNumber} </td>
+                <td> ${employee.jobTitle} </td>
+                <td> ${employee.annualSalary} </td>
+                <td><button>Delete</button></td>
+            </tr>
+        `); // end displayEmployees.append 
     } // end of loop
 } // end displayEmployees
