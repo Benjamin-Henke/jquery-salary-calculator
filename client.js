@@ -101,7 +101,7 @@ function displayEmployees() {
 // When Delete Button is pressed, delete the employee.
 // Delete button removes the button. Good start.
 function deleteEmployee () {
-    $(this).click($('.deleteEmployeeButton').remove());
+    $(this).parent().remove();
     console.log('deleteButton');
     
 } // end deleteEmployee
