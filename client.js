@@ -2,6 +2,7 @@ $(document).ready(onReady);
 
 function onReady() {
     $(document).on('click', '#submitButton', submitButton);
+    $(document).on('click', '.deleteEmployeeButton', deleteEmployee)
 } // end onReady
 
 // global variable to remember employees
@@ -57,7 +58,6 @@ function clearUserInput() {
 
 // calculate monthly costs and append to DOM
 // placed in submitButton function
-// TO FIX -> background turns read when monthly cost on first click -> Maybe separate function?
 function calcMonthlyCosts() {
     console.log('calcMonthlyCosts');
 
@@ -92,8 +92,16 @@ function displayEmployees() {
                 <td> ${employee.idNumber} </td>
                 <td> ${employee.jobTitle} </td>
                 <td> ${employee.annualSalary} </td>
-                <td><button>Delete</button></td>
+                <td class="deleteEmployeeButton"><button>Delete</button></td>
             </tr>
         `); // end displayEmployees.append 
     } // end of loop
 } // end displayEmployees
+
+// When Delete Button is pressed, delete the employee.
+// Delete button removes the button. Good start.
+function deleteEmployee () {
+    $(this).click($('.deleteEmployeeButton').remove());
+    console.log('deleteButton');
+    
+} // end deleteEmployee
