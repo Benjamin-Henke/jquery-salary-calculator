@@ -1,21 +1,31 @@
 h1 {
     text-align: center;
-    border-bottom: 5px solid black;
+    border-bottom: 3px solid black;
     margin: 10px;
     padding: 10px;
 }
 
-ul {
-    list-style-type: none;
-}
-
 table, th, td {
     text-align: center;
-    border: 2px solid black;
-    margin: 15px;
-    padding: 15px;
 }
 
-.deleteEmployeeButton {
+table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+th {
+    padding: 12px;
+    margin: 10px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+td {
+    padding: 12px;
+    margin: 10px;
+}
+
+#monthlyCostCalc {
+    margin-top: 50px;
 }

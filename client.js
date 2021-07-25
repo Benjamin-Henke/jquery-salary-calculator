@@ -7,6 +7,8 @@ function onReady() {
 
 // global variable to remember employees
 let employees = [];
+// global variable to remember total monthly cost
+let totalMonthlyCosts = 0;
 
 // registers the Submit Button being pressed 
 function submitButton() {
@@ -61,11 +63,11 @@ function clearUserInput() {
 function calcMonthlyCosts() {
     console.log('calcMonthlyCosts');
 
-    let totalMonthlyCosts = 0;
+
     // calc monthly cost by diving annual salary by 12, rounding to the nearest whole number
     for (let employee of employees) {
         totalMonthlyCosts += Math.round(Number(employee.annualSalary) / 12);
-           // check to see if monthly cost exceeds 20k
+        // check to see if monthly cost exceeds 20k
         if (totalMonthlyCosts >= 20000) {
             $('.inputMonthlyCost').css('background-color', 'red');
         } // end if statement
@@ -91,7 +93,7 @@ function displayEmployees() {
                 <td> ${employee.lastName} </td>
                 <td> ${employee.idNumber} </td>
                 <td> ${employee.jobTitle} </td>
-                <td> ${employee.annualSalary} </td>
+                <td class="employeeAnnualSalary"> ${employee.annualSalary} </td>
                 <td class="deleteEmployeeButton"><button>Delete</button></td>
             </tr>
         `); // end displayEmployees.append 
@@ -99,9 +101,10 @@ function displayEmployees() {
 } // end displayEmployees
 
 // When Delete Button is pressed, delete the employee.
-// Delete button removes the button. Good start.
-function deleteEmployee () {
-    $(this).parent().remove();
+// Delete button removes employee.
+// STRETCH - subtract from Total Monthly Cost
+function deleteEmployee() {
     console.log('deleteButton');
-    
+    $(this).parent().remove();
+
 } // end deleteEmployee
